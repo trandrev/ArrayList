@@ -6,12 +6,12 @@ template <class TYPE>
 class Spisok
 {  
    private:
-	   int* List; //Массив указателей
-	   TYPE* Data; //Массив данных
-	   int size; //Рамер массива
-	   int count; //Количество элементов
-	   int start; //Начало массива
-	   int end; //Конец массива
+	   int* List; //ГЊГ Г±Г±ГЁГў ГіГЄГ Г§Г ГІГҐГ«ГҐГ©
+	   TYPE* Data; //ГЊГ Г±Г±ГЁГў Г¤Г Г­Г­Г»Гµ
+	   int size; //ГђГ Г¬ГҐГ° Г¬Г Г±Г±ГЁГўГ 
+	   int count; //ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў
+	   int start; //ГЌГ Г·Г Г«Г® Г¬Г Г±Г±ГЁГўГ 
+	   int end; //ГЉГ®Г­ГҐГ¶ Г¬Г Г±Г±ГЁГўГ 
    public:
 	Spisok(int =1);
 	Spisok(Spisok&);
@@ -24,6 +24,12 @@ class Spisok
 	void addStart(TYPE);
 	void addEnd(TYPE);
 	bool isEnd(int);
+	void printEven()
+	{
+		for (int i = getStart(); !isEnd(i); i = getNext(i))
+		     if (get(i) % 2 == 0)
+			     std::cout << get(i) << std::endl;
+	}
 };
  
 template <class TYPE>
